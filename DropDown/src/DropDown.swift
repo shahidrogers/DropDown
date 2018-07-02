@@ -231,6 +231,32 @@ public final class DropDown: UIView {
 	}
 
 	/**
+     The borderWidth of DropDown.
+     
+     Changing the corner borderWidth automatically reloads the drop down.
+     */
+    @objc public dynamic var borderWidth = DPDConstant.UI.BorderWidth {
+        willSet {
+            tableViewContainer.layer.borderWidth = newValue
+            tableView.layer.borderWidth = newValue
+        }
+        didSet { reloadAllComponents() }
+    }
+    
+    /**
+     The borderColor of DropDown.
+     
+     Changing the corner borderColor automatically reloads the drop down.
+     */
+    @objc public dynamic var borderColor = DPDConstant.UI.BorderColor {
+        willSet {
+            tableViewContainer.layer.borderColor = newValue
+            tableView.layer.borderColor = newValue
+        }
+        didSet { reloadAllComponents() }
+    }
+
+	/**
 	The color of the shadow.
 
 	Changing the shadow color automatically reloads the drop down.
